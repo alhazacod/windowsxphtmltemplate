@@ -1,0 +1,48 @@
+body, html {
+    height: 100%;
+}
+
+.bg{
+    background-image: url("../public/winxpwallpaper.jpg");
+    background-color: darkslategrey;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cover{
+    height: 100%;
+}
+
+.no-padding{
+    padding-bottom: 0px;
+    padding-top: 0px;
+    padding-left: 0px;
+}
+
+.no-margin{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+}
+
+/*navbar styles*/
+
+.no-margin-navbar{
+    margin-top: -4px;
+    margin-bottom: -3px;
+    margin-left: -7px;
+}
+
+.navbar{
+    background-color: #265DDC;
+    /*Shadow*/
+    -webkit-box-shadow: 0px -4px 16px -1px rgba(0,0,0,0.56); 
+    box-shadow: 0px -4px 16px -1px rgba(0,0,0,0.56);
+    /*Inset Shadow*/
+    -webkit-box-shadow: inset 0px 8px 10px -1px rgba(255,255,255,0.3); 
+    box-shadow: inset 0px 8px 10px -1px rgba(255,255,255,0.3);
+}
+
+

@@ -1,0 +1,17 @@
+.dropdown-menu{
+    margin-left: -20px;
+}
+
+.dropup-content{
+    display: none;
+    position: absolute;
+    bottom: 32px;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropup-show{
+    display: block;
+}
