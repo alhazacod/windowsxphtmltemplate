@@ -2,6 +2,10 @@ body, html {
     height: 100%;
 }
 
+*{
+    font-family: tahoma;
+}
+
 .bg{
     background-image: url("../public/winxpwallpaper.jpg");
     background-color: darkslategrey;
@@ -52,8 +56,15 @@ body, html {
     padding: 3px;
     border-top-left-radius: 1%;
     border-top-right-radius: 1%;
-    background: rgb(74,147,241);
-    background: radial-gradient(circle, rgba(74,147,241,1) 0%, rgba(19,98,199,1) 100%); 
+
+    background: rgba(19,97,199,1);
+    background: -moz-linear-gradient(top, rgba(19,97,199,1) 0%, rgba(107,172,247,1) 23%, rgba(107,172,247,1) 79%, rgba(19,97,199,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(19,97,199,1)), color-stop(23%, rgba(107,172,247,1)), color-stop(79%, rgba(107,172,247,1)), color-stop(100%, rgba(19,97,199,1)));
+    background: -webkit-linear-gradient(top, rgba(19,97,199,1) 0%, rgba(107,172,247,1) 23%, rgba(107,172,247,1) 79%, rgba(19,97,199,1) 100%);
+    background: -o-linear-gradient(top, rgba(19,97,199,1) 0%, rgba(107,172,247,1) 23%, rgba(107,172,247,1) 79%, rgba(19,97,199,1) 100%);
+    background: -ms-linear-gradient(top, rgba(19,97,199,1) 0%, rgba(107,172,247,1) 23%, rgba(107,172,247,1) 79%, rgba(19,97,199,1) 100%);
+    background: linear-gradient(to bottom, rgba(19,97,199,1) 0%, rgba(107,172,247,1) 23%, rgba(107,172,247,1) 79%, rgba(19,97,199,1) 100%);
+
     -webkit-box-shadow: inset 0px 4px 2px 0px rgba(255,255,255,0.31); 
     box-shadow: inset 0px 4px 2px 0px rgba(255,255,255,0.31);
 }
@@ -61,6 +72,7 @@ body, html {
 .start-title{
     width: 100%;
     color: white;
+    vertical-align: top;
     font-size: 15px;
     text-shadow: 2px 2px 9px rgba(0,0,0,0.5);
     margin: 5px;
@@ -68,6 +80,7 @@ body, html {
 
 .start-title>div{
     display: inline-block;
+    vertical-align: middle;
 }
 
 .start-title-img{
@@ -90,15 +103,19 @@ body, html {
     display: inline-block;
     width: 50%;
     height: 75%;
+    overflow: scroll;
     margin-right: -4px;
     background-color: rgb(255, 255, 255);
+    vertical-align: top;
 }
 .start-linklist-right{
     display: inline-block;
     width: 50%;
     height: 75%;
+    overflow: scroll;
     margin-right: -4px;
     background-color: rgb(203, 227, 255);
+    vertical-align: top;
 }
 
 .start-span{
@@ -114,11 +131,41 @@ body, html {
     width: 100%;
     margin-right: -4px;
 }
+.start-option{
+    padding: 8px;
+}
 
 .start-option{
-    width: 100%;
-    padding-left: 10px;
+    color: black;
+    font-size: 14px;
 }
+
+.start-link:link {
+    text-decoration: none;
+    color: black;
+}
+  
+.start-link:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.start-link:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.start-link:active {
+    text-decoration: none;
+    color: black;
+}
+
+.start-option:hover{
+    background-color: #265DDC;
+    font-weight: bold;
+    text-decoration: none;
+}
+
 .start-option > *{
     vertical-align: middle;
 }

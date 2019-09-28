@@ -2,7 +2,7 @@ dropupcontent = document.getElementById('start-content'); //you can change the i
 
 // close te dropdown when you click out the menu
 window.addEventListener('click', function(e){
-    if(dropupcontent.classList.contains('dropup-show') && !e.target.classList.contains("start-btn") && e.target.id!=dropupcontent.id)
+    if(dropupcontent.classList.contains('dropup-show') && !e.target.classList.contains("start-btn") && e.target.id!=dropupcontent.id && e.target.parentElement.id!=dropupcontent.id)
         toggleUp();
 });
 
