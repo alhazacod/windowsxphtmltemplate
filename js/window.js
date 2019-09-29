@@ -5,7 +5,7 @@ window.addEventListener('click', function(e){
 });
 
 dragwindow.onmousedown = function(event) {
-
+    console.log("asdf");
     let shiftX = event.clientX - windoww.getBoundingClientRect().left;
     let shiftY = event.clientY - windoww.getBoundingClientRect().top;
   
@@ -13,7 +13,6 @@ dragwindow.onmousedown = function(event) {
     windoww.style.zIndex = 1000;
     document.body.append(windoww);
     
-    if(windoww.style.left != "528px")
     moveAt(event.pageX, event.pageY);
   
     // moves the windoww at (pageX, pageY) coordinates
@@ -24,7 +23,11 @@ dragwindow.onmousedown = function(event) {
     }
   
     function onMouseMove(event) {
-      moveAt(event.pageX, event.pageY);
+        console.log(windoww.style.top);
+        if(event.pageY < 760)
+        moveAt(event.pageX, event.pageY);
+        else
+        moveAt(event.pageX, 760);
     }
   
     // move the windoww on mousemove
