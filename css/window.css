@@ -3,8 +3,8 @@
     position: absolute;
     top: 50px;
     left: 200px;
-    width: 400px;
-    height: 200px;
+    width: 40%;
+    height: 30%;
 
     background: rgba(107,172,247,1);
     background: -moz-radial-gradient(center, ellipse cover, rgba(107,172,247,1) 0%, rgba(107,172,247,1) 0%, rgba(19,97,199,1) 66%, rgba(19,97,199,1) 100%);
@@ -24,18 +24,34 @@
 .window>.title{
     color: white;
     width: 100%;
-    height: 13%;
+    height: 25px;
     font-size: 15px;
     margin-top: 2px;
     cursor: grab
 }
 .window>.title>.img{
-    height: 70%;
+    height: 80%;
     margin-top: -2px;
 }
 .window>.content{
+    
+    
+    position: absolute;
+    top: 25px;
+    left: 0px;
+    bottom: 0;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
     width: 100%;
-    height: 86%;
     background-color: white;
 }
-
+.window>.drag-rd{
+    background-color: red;
+    width: 10px;
+    height: 10px;
+    top: 99%;
+    left: 99%;
+    position: absolute;
+    cursor: se-resize;
+}

@@ -12,7 +12,7 @@
     
 </head>
 <body>
-    <nav class="navbar fixed-bottom navbar-light no-padding no-margin-navbar">
+    <nav class="navbar fixed-bottom navbar-light no-padding no-margin-navbar no-select">
         <div class="dropup no-margin-navbar">
             <div href="" onclick="toggleUp()" class="start-btn no-padding">
                 <img src="public/winxpstart.png" width="110" height="35" alt="" class="start-btn no-margin-navbar">
@@ -56,9 +56,10 @@
         </div>
     </nav>
 
-    <div class="bg desktop">
+    <div id="desktop" class="bg desktop">
         <div id="window" class="window">
-            <div class="title" id="windowTitle"><img class="img" src="public/Internet_Explorer_6_logo.png" alt=""> Hola mundo</div>
+            <div class="title no-select" id="windowTitle"><img class="img" src="public/Internet_Explorer_6_logo.png" alt=""> Hola mundo</div>
+            <div class="drag-rd"></div>
             <div class="content">
                 Hello
             </div>
