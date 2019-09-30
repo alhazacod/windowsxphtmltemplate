@@ -35,16 +35,15 @@
 }
 .window>.content{
     
-    
+    margin-bottom: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    width: calc(100% - 10px);
+    background-color: white;
     position: absolute;
     top: 25px;
     left: 0px;
     bottom: 0;
-    margin-bottom: 5px;
-    margin-right: 5px;
-    margin-left: 5px;
-    width: 100%;
-    background-color: white;
 }
 .window>.drag-rd{
     background-color: red;

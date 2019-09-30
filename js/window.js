@@ -43,18 +43,27 @@ dragwindow.onmousedown = function(event) {
 
 dragrd.onmousedown = function(event) {
   function resize(w, h){
-    console.log(w + ", " + h);
-    wwindow.style.width = w + 'px';
-    wwindow.style.height = h + 'px';
+    if(w>200){
+      wwindow.style.width = w + 'px';
+    }
+    if(h>200){
+      wwindow.style.height = h + 'px';
+    }
   }
 
   function onMouseMove(event){
+    if(event.pageY < windowh && event.pageY > 1 && event.pageX < windoww && event.pageX > 1)
     resize(event.clientX - wwindow.getBoundingClientRect().left, event.clientY - wwindow.getBoundingClientRect().top);
+    else{
+      document.removeEventListener('mousemove', onMouseMove);
+      wwindow.onmouseup = null;
+    }
   }
 
   document.addEventListener('mousemove', onMouseMove);
 
   wwindow.onmouseup = function(){
-    document.removeEventListener('mousemove', onMouseMove)
+    document.removeEventListener('mousemove', onMouseMove);
+    wwindow.onmouseup = null;
   };
 };
