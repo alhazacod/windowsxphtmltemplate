@@ -49,8 +49,8 @@
     background-color: red;
     width: 10px;
     height: 10px;
-    top: 99%;
-    left: 99%;
+    top: calc(100% - 5px);
+    left: calc(100% - 5px);
     position: absolute;
     cursor: se-resize;
 }
