@@ -61,6 +61,10 @@ body, html {
     box-shadow: inset 0px 8px 10px -1px rgba(255,255,255,0.3);
 }
 
+.start-btn{
+    cursor: pointer;
+}
+
 .dropup-content{
     height: 60vh;
     width: 30vw;
