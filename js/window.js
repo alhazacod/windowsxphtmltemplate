@@ -72,25 +72,30 @@ dragrd.onmousedown = function(event) {
 dragru.onmousedown = function(event) {
   let shiftLeft = event.clientX - wwindow.getBoundingClientRect().left;
   let shiftTop = event.clientY - wwindow.getBoundingClientRect().top;
-  function resize(w, h, pageX, pageY){
-    wwindow.style.top = pageY - shiftTop + 'px';
+  let shiftBottom = - event.clientY + wwindow.getBoundingClientRect().bottom;
+
+  function resize(w, h, pageY){
+    
     if(w>200){
       wwindow.style.width = w + 'px';
     }
     if(h>200){
-      wwindow.style.height = h + 'px';
+      wwindow.style.height = wwindow.getBoundingClientRect().height + (event.pageY - wwindow.getBoundingClientRect().top) + 'px';
       
     }
+    wwindow.style.top = pageY - shiftTop + 'px';
   }
 
   function onMouseMove(event){
-    if(event.pageY < windowh && event.pageY > 1 && event.pageX < windoww && event.pageX > 1){
-      resize(event.clientX - wwindow.getBoundingClientRect().left, -event.clientY + wwindow.getBoundingClientRect().bottom, 0, event.pageY);
-    }
-    else{
+    shiftLeft = event.clientX - wwindow.getBoundingClientRect().left;
+    shiftBottom = -event.clientY + wwindow.getBoundingClientRect().bottom;
+    //if(event.pageY < windowh && event.pageY > 1 && event.pageX < windoww && event.pageX > 1){
+      resize(shiftLeft, shiftBottom, event.pageY);
+    //}
+    /*else{
       document.removeEventListener('mousemove', onMouseMove);
       wwindow.onmouseup = null;
-    }
+    }*/
   }
 
   document.addEventListener('mousemove', onMouseMove);
