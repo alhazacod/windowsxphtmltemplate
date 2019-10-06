@@ -75,15 +75,16 @@ dragru.onmousedown = function(event) {
   let shiftBottom = - event.clientY + wwindow.getBoundingClientRect().bottom;
 
   function resize(w, h, pageY){
-    
+    wwindow.style.top = pageY - shiftTop + 'px';
     if(w>200){
       wwindow.style.width = w + 'px';
     }
     if(h>200){
-      wwindow.style.height = wwindow.getBoundingClientRect().height + (event.pageY - wwindow.getBoundingClientRect().top) + 'px';
+      console.log(wwindow.getBoundingClientRect().bottom - event.pageY);
+      wwindow.style.height = (wwindow.getBoundingClientRect().bottom - event.pageY) + 'px';
       
     }
-    wwindow.style.top = pageY - shiftTop + 'px';
+    //wwindow.style.top = pageY - shiftTop + 'px';
   }
 
   function onMouseMove(event){
