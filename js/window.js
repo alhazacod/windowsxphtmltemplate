@@ -69,40 +69,34 @@ dragrd.onmousedown = function(event) {
   };
 };
 
-dragru.onmousedown = function(event) {
-  let shiftLeft = event.clientX - wwindow.getBoundingClientRect().left;
-  let shiftTop = event.clientY - wwindow.getBoundingClientRect().top;
-  let shiftBottom = - event.clientY + wwindow.getBoundingClientRect().bottom;
+// thanks @Bravo on stackoverflow for help me on this part https://stackoverflow.com/questions/58350597/creating-an-html-template-that-looks-like-windown-but-have-problems-with-the-res
+dragru.onmousedown = function (event) {
+  let bottom = wwindow.getBoundingClientRect().bottom;
+  let left = wwindow.getBoundingClientRect().left;
 
-  function resize(w, h, pageY){
-    wwindow.style.top = pageY - shiftTop + 'px';
-    if(w>200){
-      wwindow.style.width = w + 'px';
-    }
-    if(h>200){
-      console.log(wwindow.getBoundingClientRect().bottom - event.pageY);
-      wwindow.style.height = (wwindow.getBoundingClientRect().bottom - event.pageY) + 'px';
-      
-    }
-    //wwindow.style.top = pageY - shiftTop + 'px';
+  function resize(w, h) {
+      if (w > 200) {
+          wwindow.style.width = w + 'px';
+      }
+      if (h > 200) {
+          wwindow.style.top = bottom - h + 'px';
+          wwindow.style.height = h + 'px';
+      }
   }
 
-  function onMouseMove(event){
-    shiftLeft = event.clientX - wwindow.getBoundingClientRect().left;
-    shiftBottom = -event.clientY + wwindow.getBoundingClientRect().bottom;
-    //if(event.pageY < windowh && event.pageY > 1 && event.pageX < windoww && event.pageX > 1){
-      resize(shiftLeft, shiftBottom, event.pageY);
-    //}
-    /*else{
-      document.removeEventListener('mousemove', onMouseMove);
-      wwindow.onmouseup = null;
-    }*/
+  function onMouseMove(event) {
+      if (event.pageY < windowh && event.pageY > 1 && event.pageX < windoww && event.pageX > 1)
+          resize(event.clientX - left, bottom - event.clientY);
+      else {
+          document.removeEventListener('mousemove', onMouseMove);
+          wwindow.onmouseup = null;
+      }
   }
 
   document.addEventListener('mousemove', onMouseMove);
 
-  wwindow.onmouseup = function(){
-    document.removeEventListener('mousemove', onMouseMove);
-    wwindow.onmouseup = null;
+  wwindow.onmouseup = function () {
+      document.removeEventListener('mousemove', onMouseMove);
+      wwindow.onmouseup = null;
   };
 };
