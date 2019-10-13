@@ -72,3 +72,12 @@
     position: absolute;
     cursor: nw-resize;
 }
+.window>.drag-ld{
+    background-color: red;
+    width: 10px;
+    height: 10px;
+    top: calc(100% - 5px);
+    left: -5px;
+    position: absolute;
+    cursor: sw-resize;
+}
